@@ -1,0 +1,69 @@
+#!/bin/bash
+echo "¡Bienvenido estamos para compilar y ejecutar tus codigos lenguajes de programación!"
+echo -e "\n(1): Python\n(2): C\n(3): Java\n(4): JavaScript\n(5): C++\n(6): Salir\n"
+
+read -p "Introduce tu opcion: " preg_1
+
+if [ "$preg_1" == "1" ]; then
+  echo -e "\n¡Vamos a ejecutar un codigo de Python!"
+  echo -e "\nPega o coloca la direccion del script de Python (Asegurate de tener /home/tuusuario/, al empezar si no te lo sabes coloca "pwd" en la terminal\n)"
+  read -p "Direccion --> " direc_1
+  cd "$direc_1"
+  echo -e "\n¡Coloca el nombre del Script a ejecutar¡\n"
+  read -p "--> " script_1
+  echo -e "\nEjecutando...\n"
+  python "$script_1"
+fi
+
+if [ "$preg_1" == "2" ]; then
+  echo -e "\n¡Vamos a compilar y ejecutar un codigo de C ¡ASEGURATE DE TENER GCC INSTALADO!!"
+  echo -e "\nPega o coloca la direccion del script de C (Asegurate de tener /home/tuusuario/, al empezar si no te lo sabes coloca "pwd" en la terminal\n)"
+  read -p "Direccion --> " direc_2
+  cd "$direc_2"
+  echo -e "\n!Coloca el nombre del Script a ejecutar¡\n"
+  read -p "--> " script_2
+  echo -e "\nCompilando..."
+  echo -e "\nEjecutando...\n"
+  gcc "$script_2" -o main
+  ./main
+fi
+
+if [ "$preg_1" == "3" ]; then
+  echo -e "\n¡Vamos a compilar y ejecutar un script de Java!"
+  echo -e "\nPega o coloca la direccion del script de Java (Asegurate de tener /home/tuusuario/, al empezar si no te lo sabes coloca "pwd" en la terminal\n)"
+  read -p "Direccion --> " direc_3
+  cd "$direc_3"
+  echo "\n¡Coloca el nombre del Script!\n"
+  read -p "--> " script_3
+  echo -e "\nEsto puede tardar..\n."
+  javac "$script_3"
+  java "$script_3"
+fi
+
+if [ "$preg_1" == "4" ]; then
+  echo -e "\n¡Vamos a ejecutar un script de JavScript (ASEGURATE DE TENER NODE.JS)!"
+  echo -e "\nPega o coloca la direccion del script de JavaScript (Asegurate de tener /home/tuusuario/, al empezar si no te lo sabes coloca "pwd" en la terminal)\n"
+  read -p "Direccion --> " direc_4
+  cd "$direc_4"
+  echo -e "\n¡Coloca el nombre del Script a ejecutar!\n"
+  read -p "--> " script_4
+  echo -e "\nEjecutando..\n"
+  node "$script_4"
+fi
+
+if [ "$preg_1" == "5" ]; then
+  echo -e "\n¡Vamos compilar y ejecutar un script de c++ (ASEGURATE DE TENER g++)!"
+  echo -e "\nPega p coloca la direccion del script de C++ (Asegurate de tener /home/tuusuario7, al empezar si no te lo sabes coloca "pwd" en la terminal\n)"
+  read -p "Direccion --> " direc_5
+  cd "$direc_5"
+  echo "\n¡Coloca el nombre del Script a ejecutar!\n"
+  read -p "--> " script_5
+  echo -e "\nCompilando..."
+  echo -e "\nEjecutando...\n"
+  g++ "$script_5" -o main
+  ./main
+fi
+
+if [ "$preg_1" == "6" ]; then
+  echo -e "\nHasta luego..."
+fi
